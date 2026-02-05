@@ -9,6 +9,8 @@
 - **Result**: Failure
 - **Description**: Simulated repeated login failures using incorrect password.
 - **Mitigation**: Lock account, enable MFA
+  ### Evidence
+![Failed Login](screenshots/failed-login.png)
 
 ### 2. Access Denied API Call
 - **Event Name**: ListUsers

@@ -35,7 +35,7 @@ Simulated repeated AWS Management Console login failures using an incorrect pass
 - Monitor for continued failed login attempts  
 
 **Evidence:**  
-`screenshots/failed-login.png`
+![Failed Login](screenshots/failed-login.png)
 
 ---
 
@@ -51,8 +51,9 @@ A low-privilege IAM user attempted to list IAM users without sufficient permissi
 - Monitor for repeated unauthorized API calls  
 - Investigate correlated activity from the same source
 
-  **Evidence:**  
-`screenshots/failed-console-login-json.png`
+  **Evidence:**
+  ![Failed Login](screenshots/failed-console-login-json.png)
+
 
 
 ---

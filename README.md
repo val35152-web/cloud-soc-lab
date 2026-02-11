@@ -49,7 +49,11 @@ A low-privilege IAM user attempted to list IAM users without sufficient permissi
 **SOC Response:**  
 - Review IAM policies for least-privilege enforcement  
 - Monitor for repeated unauthorized API calls  
-- Investigate correlated activity from the same source  
+- Investigate correlated activity from the same source
+
+  **Evidence:**  
+`screenshots/failed-console-login-json.png`
+
 
 ---
 

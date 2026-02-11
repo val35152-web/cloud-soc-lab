@@ -1,20 +1,59 @@
-# Cloud SOC Lab – AWS Simulation
+# Cloud SOC Lab – AWS CloudTrail
 
 ## Objective
-Simulate a Security Operations Center (SOC) workflow using AWS CloudTrail.  
-Generate and analyze events to practice detection, investigation, and response.
+Simulate a Security Operations Center (SOC) workflow using AWS CloudTrail by generating and analyzing security-relevant events in a cloud environment. This lab focuses on detecting, investigating, and responding to authentication and authorization failures.
+
+---
 
 ## Key Components
-- **IAM Users**: Test accounts to simulate attackers / employees
-- **CloudTrail**: Logs all management events (console logins, API calls)
-- **Simulated Threats**: Failed logins, AccessDenied API calls, password changes
+- **IAM Users:** Test IAM accounts used to simulate attacker and employee behavior  
+- **AWS CloudTrail:** Captures AWS management events such as console logins and API calls  
+- **Simulated Threat Activity:** Failed console login attempts and unauthorized IAM API calls  
+
+---
 
 ## Lab Goals
-1. Generate AWS events using a test IAM user
-2. Collect events in CloudTrail
-3. Analyze logs to detect suspicious activity
-4. Document findings and recommended responses
+- Generate security events using a test IAM user  
+- Collect and review events in AWS CloudTrail  
+- Analyze logs to identify suspicious behavior  
+- Document SOC findings and recommended response actions  
 
-## Notes
-- No GuardDuty required
-- Fully Free Tier compatible
+---
+
+## Simulated Security Events
+
+### 1. Failed Console Login (Brute Force Simulation)
+- **Event Name:** ConsoleLogin  
+- **Result:** Failure  
+
+**Description:**  
+Simulated repeated AWS Management Console login failures using an incorrect password to represent a brute-force authentication attempt.
+
+**SOC Response:**  
+- Lock or temporarily disable the affected IAM user  
+- Enable multi-factor authentication (MFA)  
+- Monitor for continued failed login attempts  
+
+**Evidence:**  
+`screenshots/failed-console-login-json.png`
+
+---
+
+### 2. Access Denied API Call (IAM Enumeration Attempt)
+- **Event Name:** ListUsers  
+- **Result:** AccessDenied  
+
+**Description:**  
+A low-privilege IAM user attempted to list IAM users without sufficient permissions. The request was denied and logged by AWS CloudTrail.
+
+**SOC Response:**  
+- Review IAM policies for least-privilege enforcement  
+- Monitor for repeated unauthorized API calls  
+- Investigate correlated activity from the same source  
+
+---
+
+## Key Takeaways
+- Demonstrated detection of authentication and authorization failures using AWS CloudTrail  
+- Practiced SOC-style log analysis and incident response documentation  
+- Reinforced IAM security best practices such as MFA and least privilege  

@@ -35,7 +35,7 @@ Simulated repeated AWS Management Console login failures using an incorrect pass
 - Monitor for continued failed login attempts  
 
 **Evidence:**  
-`screenshots/failed-console-login-json.png`
+`screenshots/failed-login.png`
 
 ---
 
